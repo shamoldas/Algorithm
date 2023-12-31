@@ -1,0 +1,82 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[22][22],b[22][22],c[22][22];
+	int r1,r2,c1,c2,i,k,l,sum=0;
+	cout<<"enter_first_matrix_row__colunm.\n";
+	cin>>r1>>c1;
+	cout<<"enter_"<<c1*r1<<"__elements.\n";
+	for(i=0;i<r1;i++)
+	{
+		for(k=0;k<c1;k++)
+		{
+			cin>>a[i][k];
+		}
+	}
+	cout<<"enter_second_matrix_row__colunm.\n";
+	cin>>r2>>c2;
+	cout<<"enter_"<<r2*c2<<"__elements.\n";
+	for(i=0;i<r2;i++)
+	{
+		for(k=0;k<c2;k++)
+		{
+			cin>>b[i][k];
+		}
+	}
+	if(c1!=r2)
+	{
+		cout<<"incomparable_dimention.\n";
+	}
+	else
+	{
+		for(i=0;i<r1;i++)
+		{
+			for(k=i;k<c2;k++)
+			{
+				c[i][k]=0;
+				for(l=0;l<c1;l++)
+				{
+				      sum+=a[i][l]*b[l][k];
+				      {
+				      	c[i][k]=sum;
+				      }
+				}
+			}
+		}
+	}
+	cout<<"................................\n";
+	cout<<"display...\n";
+	for(i=0;i<r1;i++)
+	{
+		for(k=0;k<c1;k++)
+		{
+			cout<<a[i][k]<<"->";
+		}
+		cout<<"\n";
+	}
+	cout<<"\t";
+	cout<<"................................\n";
+		for(i=0;i<r2;i++)
+	{
+		for(k=0;k<c2;k++)
+		{
+			cout<<b[i][k]<<"->";
+		}
+		cout<<"\n";
+	}
+	cout<<"\t";
+	cout<<"______________________________________\n";
+	cout<<"multipication....\n";
+		for(i=0;i<r1;i++)
+	{
+		for(k=0;k<c2;k++)
+		{
+			cout<<c[i][k]<<"->";
+		}
+		cout<<"\n";
+	}
+	cout<<"\t";
+	return 0;
+	
+}
